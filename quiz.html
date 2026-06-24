@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クイズに挑戦｜HIKAKIN 豆知識クイズ</title>
+<meta name="description" content="全10問の5択クイズに挑戦。各問題は徹底解説付き。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/quiz.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a2238" stroke-width="2.2" stroke-linecap="round">
+          <rect x="9" y="3" width="6" height="12" rx="3" fill="#1a2238"/>
+          <path d="M5 11a7 7 0 0 0 14 0"/>
+          <line x1="12" y1="18" x2="12" y2="22"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">HIKAKIN QUIZ</span>
+        <span class="brand-sub">豆知識十番勝負</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="quiz.html">クイズに挑戦</a></li>
+        <li><a href="archive.html">全問解説</a></li>
+        <li><a href="about.html">ヒカキン年表</a></li>
+        <li><a href="result.html">ランキング</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="quiz-page">
+  <div class="container-narrow">
+
+    <!-- メタ情報 -->
+    <div class="quiz-meta">
+      <div class="quiz-counter">
+        <span id="counter-current" class="counter-current">01</span>
+        <span class="counter-divider">/</span>
+        <span id="counter-total" class="counter-total">10</span>
+        <span class="counter-label">QUESTION</span>
+      </div>
+      <div id="quiz-dots" class="quiz-dots"></div>
+      <div class="quiz-score">
+        <div class="score-item correct">
+          <span id="score-correct" class="score-num">00</span>
+          <span class="score-label">CORRECT</span>
+        </div>
+        <div class="score-item wrong">
+          <span id="score-wrong" class="score-num">00</span>
+          <span class="score-label">WRONG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- カード -->
+    <div class="card-stage">
+      <article id="quiz-card" class="quiz-card">
+        <header class="q-header">
+          <div class="q-numberbox">
+            <span class="q-numberbox-label">Q</span>
+            <span class="q-numberbox-num" id="q-numberbox-num"></span>
+          </div>
+          <div class="q-meta">
+            <span id="q-type" class="q-type-pill"></span>
+            <h2 id="q-text" class="q-text"></h2>
+            <div id="q-sub" class="q-sub" style="display:none;"></div>
+          </div>
+        </header>
+
+        <div id="choices" class="choices"></div>
+
+        <div class="quiz-actions">
+          <p id="action-hint" class="action-hint"></p>
+          <button id="submit-btn" type="button" class="btn btn-primary" disabled>
+            <span>回答する</span>
+          </button>
+        </div>
+
+        <section id="explain" class="explain" aria-live="polite"></section>
+
+        <div id="quiz-nav" class="quiz-nav" style="display:none;">
+          <span class="action-hint">解説を読み終えたら、次の問題へ。</span>
+          <button id="next-btn" type="button" class="btn btn-vermilion">次の問題へ →</button>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-mark">HIKAKIN QUIZ</span>
+    <div class="footer-rule"></div>
+    <p class="footer-text">引用：Wikipedia、上越タウンジャーナル、スポニチ、文春オンライン、Real Sound、オリコンニュース、ねとはぴ!、UUUM公式 ほか。</p>
+    <p class="footer-copy">© HIKAKIN TRIVIA QUIZ — A FAN-MADE EDUCATIONAL PROJECT</p>
+  </div>
+</footer>
+
+<script src="js/quiz-data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/confetti.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Q番号ボックスの数字を同期
+  document.addEventListener("DOMContentLoaded", () => {
+    const sync = () => {
+      const cur = document.getElementById("counter-current").textContent;
+      document.getElementById("q-numberbox-num").textContent = cur;
+    };
+    sync();
+    new MutationObserver(sync).observe(document.getElementById("counter-current"), { childList: true });
+  });
+</script>
+<script src="js/quiz-engine.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* =====================================================================
+   hero.css - トップヒーローセクション
+   ===================================================================== */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.hero-bg-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 浮かぶ巨大円（日輪のような） */
+.hero-sun {
+  position: absolute;
+  top: -8%;
+  right: -10%;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(212,175,55,0.22), rgba(197,57,46,0.08) 55%, transparent 75%);
+  filter: blur(2px);
+  animation: sunPulse 8s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+/* スキージャンプ軌跡SVG */
+.hero-trajectory {
+  position: absolute;
+  left: -40px;
+  bottom: 10%;
+  width: 520px;
+  opacity: 0.18;
+}
+
+.hero-trajectory path {
+  fill: none;
+  stroke: var(--color-gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+  animation: dashFlow 14s linear infinite;
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -200; }
+}
+
+/* 浮遊する音符 */
+.float-note {
+  position: absolute;
+  color: var(--color-gold);
+  opacity: 0.25;
+  font-family: serif;
+  animation: floatUp 12s ease-in-out infinite;
+}
+.float-note:nth-child(1) { top: 30%; left: 12%; font-size: 38px; animation-delay: 0s; }
+.float-note:nth-child(2) { top: 60%; left: 78%; font-size: 28px; animation-delay: 3s; }
+.float-note:nth-child(3) { top: 18%; left: 62%; font-size: 32px; animation-delay: 6s; }
+.float-note:nth-child(4) { top: 75%; left: 22%; font-size: 24px; animation-delay: 9s; }
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(8deg); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  color: var(--color-gold-light);
+  padding: 6px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  background: rgba(212,175,55,0.05);
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-vermilion);
+  box-shadow: 0 0 8px var(--color-vermilion);
+}
+
+.hero-title {
+  font-size: clamp(36px, 5.4vw, 68px);
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.hero-title .title-row {
+  display: block;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: titleIn 1s var(--ease-out) forwards;
+}
+.hero-title .title-row:nth-child(2) { animation-delay: 0.15s; }
+.hero-title .title-row:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes titleIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  margin-bottom: 36px;
+  line-height: 1.85;
+  max-width: 540px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 40px;
+  padding: 22px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 38px;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--color-text-muted);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===== ボタン（共通） ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  transition: all var(--duration-base) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-deep) 100%);
+  color: var(--color-bg-deep);
+  box-shadow: var(--shadow-gold), var(--shadow-medium);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(212,175,55,0.45), 0 14px 32px rgba(0,0,0,0.4);
+}
+
+.btn-primary:hover::before { transform: translateX(100%); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn-ghost:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ===== 右側：HIKAKINマーク ===== */
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 460px;
+}
+
+.hero-emblem {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.emblem-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  animation: spinSlow 40s linear infinite;
+}
+
+.emblem-ring::before, .emblem-ring::after {
+  content: "";
+  position: absolute;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 16px rgba(212,175,55,0.6);
+}
+.emblem-ring::before { top: -6px; left: 50%; transform: translateX(-50%); }
+.emblem-ring::after { bottom: -6px; left: 50%; transform: translateX(-50%); }
+
+.emblem-ring-2 {
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212,175,55,0.35);
+  animation: spinSlow 28s linear infinite reverse;
+}
+
+.emblem-inner {
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(232,201,104,0.95), rgba(168,134,42,0.85) 60%, rgba(120,90,20,0.95) 100%);
+  display: grid;
+  place-items: center;
+  box-shadow:
+    var(--shadow-deep),
+    inset 0 4px 12px rgba(255,255,255,0.4),
+    inset 0 -8px 18px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.emblem-inner::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.18);
+}
+
+.emblem-mic {
+  width: 52%;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+/* スクロールガイド */
+.scroll-cue {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+}
+
+.scroll-cue::after {
+  content: "";
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--color-gold), transparent);
+  animation: scrollDown 2.2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); }
+  60% { transform: scaleY(1); }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@media (max-width: 880px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { min-height: 320px; }
+  .hero-emblem { max-width: 320px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .stat-num { font-size: 30px; }
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="micG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f3ec"/>
+      <stop offset="1" stop-color="#c8c3b5"/>
+    </linearGradient>
+    <linearGradient id="micH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <!-- mic head -->
+  <rect x="34" y="14" width="32" height="46" rx="16" fill="url(#micG)" stroke="#1a2238" stroke-width="2"/>
+  <!-- grille lines -->
+  <g stroke="#5a5a5a" stroke-width="1.2" opacity="0.6">
+    <line x1="36" y1="22" x2="64" y2="22"/>
+    <line x1="36" y1="28" x2="64" y2="28"/>
+    <line x1="36" y1="34" x2="64" y2="34"/>
+    <line x1="36" y1="40" x2="64" y2="40"/>
+    <line x1="36" y1="46" x2="64" y2="46"/>
+    <line x1="36" y1="52" x2="64" y2="52"/>
+  </g>
+  <!-- stand arc -->
+  <path d="M22 52 a28 28 0 0 0 56 0" stroke="#1a2238" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- stem -->
+  <rect x="48" y="70" width="4" height="14" fill="url(#micH)"/>
+  <!-- base -->
+  <ellipse cx="50" cy="86" rx="14" ry="3.5" fill="url(#micH)"/>
+</svg>

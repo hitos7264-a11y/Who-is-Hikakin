@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヒカキン年表｜HIKAKIN 豆知識クイズ</title>
+<meta name="description" content="ヒカキンの歩みを時系列でたどる年表。クイズ本編で扱う出来事をビジュアルで把握できます。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/result.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<style>
+  .about-page { padding: 120px 0 80px; }
+  .about-intro {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .about-intro p {
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 18px auto 0;
+    line-height: 2;
+    font-size: 15px;
+  }
+  .about-quotes {
+    margin-top: 80px;
+    padding: 50px 40px;
+    background: linear-gradient(165deg, var(--color-bg-elevated), var(--color-bg-base));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+  }
+  .about-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 2.4vw, 22px);
+    line-height: 1.85;
+    color: var(--color-text-primary);
+    max-width: 720px;
+    margin: 0 auto;
+    letter-spacing: 0.04em;
+    position: relative;
+    padding: 0 30px;
+  }
+  .about-quote::before, .about-quote::after {
+    color: var(--color-gold);
+    font-family: serif;
+    font-size: 48px;
+    line-height: 1;
+    opacity: 0.6;
+    position: absolute;
+  }
+  .about-quote::before { content: "“"; top: -12px; left: -8px; }
+  .about-quote::after { content: "”"; bottom: -38px; right: -8px; }
+  [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+  [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a2238" stroke-width="2.2" stroke-linecap="round">
+          <rect x="9" y="3" width="6" height="12" rx="3" fill="#1a2238"/>
+          <path d="M5 11a7 7 0 0 0 14 0"/>
+          <line x1="12" y1="18" x2="12" y2="22"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">HIKAKIN QUIZ</span>
+        <span class="brand-sub">豆知識十番勝負</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー"><span></span></button>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="quiz.html">クイズに挑戦</a></li>
+        <li><a href="archive.html">全問解説</a></li>
+        <li><a href="about.html">ヒカキン年表</a></li>
+        <li><a href="result.html">ランキング</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="about-page">
+  <div class="container">
+
+    <div class="about-intro" data-reveal>
+      <span class="section-eyebrow">HIKAKIN — A TIMELINE</span>
+      <h1 class="section-title">新潟県妙高市から、<br><span class="gold-text">世界へ</span>。</h1>
+      <span class="gold-rule"></span>
+      <p>
+        本名「開發 光（かいはつ ひかる）」。1989年4月21日、新潟県中頸城郡妙高高原町（現・妙高市）に生まれる。ハモネプで見たRAG FAIRのおっくんに憧れてビートボックスを始め、御徒町のスーパー店員から世界的YouTuberへ。クイズ本編で扱う主要な出来事を、時系列でまとめました。
+      </p>
+    </div>
+
+    <section class="timeline">
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">1989</span>
+          <h3 class="timeline-title">4月21日、新潟県妙高市に生まれる</h3>
+          <p class="timeline-desc">本名 開發 光（かいはつ ひかる）。中頸城郡妙高高原町（現・妙高市）で誕生し、後に旧新井市エリアで育つ。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2001</span>
+          <h3 class="timeline-title">『ハモネプ』でおっくんに衝撃</h3>
+          <p class="timeline-desc">小学校5〜6年生の頃、フジテレビ系『力の限りゴーゴゴー!!』内コーナー『ハモネプ』でRAG FAIRのおっくんのボイパを見て、ビートボックスを志すようになる。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2006.12.30</span>
+          <h3 class="timeline-title">YouTubeチャンネル「HIKAKIN」開設</h3>
+          <p class="timeline-desc">原点となるチャンネルを開設。日本最古参クラスのYouTuberが、ここからスタートした。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2008.03</span>
+          <h3 class="timeline-title">新潟県立新井高等学校を卒業、上京</h3>
+          <p class="timeline-desc">高校卒業と同時に上京。新潟県出身者が多いスーパー「吉池（御徒町）」に就職し、約4年間勤務する。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2010</span>
+          <h3 class="timeline-title">『Super Mario Beatbox』が世界を席巻</h3>
+          <p class="timeline-desc">スーパーマリオのBGMと効果音を口だけで再現した動画が世界中で爆発的に拡散。「My name is HIKAKIN.」の英語自己紹介とともに、グローバルクリエイターへ。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2011</span>
+          <h3 class="timeline-title">「HikakinTV」始動</h3>
+          <p class="timeline-desc">7月19日、メインのバラエティ・商品レビューチャンネル「HikakinTV」を開設。ここから「日本一のYouTuber」への道が本格的に始まる。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2013.06</span>
+          <h3 class="timeline-title">UUUM前身「ON SALE」設立</h3>
+          <p class="timeline-desc">鎌田和樹氏とともに会社を設立。同年10月「UUUM」へ社名変更し、日本のYouTuber事務所の礎を築く。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2014</span>
+          <h3 class="timeline-title">アリアナ・グランデと公式コラボ</h3>
+          <p class="timeline-desc">『Ariana Grande - Break Free ft. HIKAKIN』をアリアナ公式チャンネルで公開。世界の歌姫と並んだ日本人ビートボクサーとして、新潟の青年が頂点へ。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2015 – 2024</span>
+          <h3 class="timeline-title">HIKAKIN & SEIKINの音楽活動</h3>
+          <p class="timeline-desc">兄セイキンとの楽曲を順次リリース。⑦YouTubeテーマソング(2015) → ①雑草(2017) → ⑥今(2018) → ③夢(2019) → ②光(2020) → ⑤FIRE(2021) → ④コール(2024)。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2021.09.10</span>
+          <h3 class="timeline-title">HikakinTV、登録者1,000万人突破</h3>
+          <p class="timeline-desc">日本最大級のYouTubeチャンネルとして、ついに大台へ到達。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2023.05.09</span>
+          <h3 class="timeline-title">「みそきん」発売</h3>
+          <p class="timeline-desc">自身初のブランド「HIKAKIN PREMIUM」第1弾として、日清食品との共同開発カップ麺『みそきん 濃厚味噌ラーメン』を発売。セブン-イレブンで即完売の社会現象に。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2024.01.01</span>
+          <h3 class="timeline-title">結婚を発表</h3>
+          <p class="timeline-desc">元日に「ヒカキン、結婚しました。【結婚報告100連発】」を公開。30代の一般女性との結婚を電撃報告し、ネットは祝福ムード一色に。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2024.08.01</span>
+          <h3 class="timeline-title">第一子（長女）誕生を報告</h3>
+          <p class="timeline-desc">『ヒカキン、パパになる』動画で第一子の誕生を発表。クリエイターから父親へ、新たなステージへ。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2025.01.17</span>
+          <h3 class="timeline-title">「HikakinClipTV」開設</h3>
+          <p class="timeline-desc">クリップ動画専用の新チャンネルを開設。短尺動画時代へさらに本格対応。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2025.08.07</span>
+          <h3 class="timeline-title">「みそきん」実店舗オープン</h3>
+          <p class="timeline-desc">東京駅ラーメンストリート内にみそきんの実店舗がオープン。ついにリアル飲食店へ進出。</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">2026.04.21</span>
+          <h3 class="timeline-title">麦茶ブランド「ONICHA（鬼茶）」発売</h3>
+          <p class="timeline-desc">37歳の誕生日に合わせてセブン-イレブンで発売。ラベル内側に「鬼みくじ」を仕込むギミックが特徴。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="about-quotes" data-reveal>
+      <p class="about-quote">
+        新潟県妙高市の地味なスーパー店員だった青年が、ハモネプで見たRAG FAIRのおっくんに憧れて始めたビートボックスを武器に、世界のアリアナ・グランデと並び、日清食品と組んで自社ブランドを持ち、ついには東京駅に実店舗を構えるまでに至る——。ヒカキンの歩みは「YouTuber」という職業そのものの歴史と完全に重なります。
+      </p>
+    </section>
+
+    <div style="text-align:center; margin-top: 60px;">
+      <a href="quiz.html" class="btn btn-primary">
+        <span class="btn-icon">▶</span>
+        <span>10問のクイズに挑戦する</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-mark">HIKAKIN QUIZ</span>
+    <div class="footer-rule"></div>
+    <p class="footer-text">引用：Wikipedia、上越タウンジャーナル、スポニチ、文春オンライン、Real Sound、オリコンニュース、ねとはぴ!、UUUM公式 ほか。</p>
+    <p class="footer-copy">© HIKAKIN TRIVIA QUIZ — A FAN-MADE EDUCATIONAL PROJECT</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

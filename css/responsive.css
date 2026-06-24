@@ -1,0 +1,41 @@
+/* =====================================================================
+   responsive.css - 細部のレスポンシブ調整
+   ===================================================================== */
+
+@media (max-width: 1024px) {
+  .container { padding: 0 22px; }
+}
+
+@media (max-width: 720px) {
+  .hero { min-height: auto; padding: 80px 0 60px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { width: 100%; }
+
+  .stat { flex: 1 1 30%; }
+
+  .features { padding: 60px 0; }
+  .preview-list { grid-template-columns: 1fr; }
+
+  .archive-toc { padding: 14px 16px; }
+  .archive-toc-link { min-width: 50px; height: 32px; font-size: 13px; }
+
+  .quiz-meta { flex-direction: column; align-items: flex-start; }
+  .quiz-score { align-self: stretch; justify-content: flex-end; }
+  .counter-label { display: none; }
+
+  .result-rank-crest { width: 140px; height: 140px; }
+  .result-rank-inner { font-size: 68px; }
+  .result-detail { grid-template-columns: repeat(5, 1fr); }
+  .name-input-row { flex-direction: column; }
+  .name-input-row .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .container, .container-narrow { padding: 0 16px; }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 15px; }
+  .section-title { font-size: 24px; }
+  .q-text { font-size: 18px; }
+
+  .result-detail { grid-template-columns: repeat(2, 1fr); }
+}
